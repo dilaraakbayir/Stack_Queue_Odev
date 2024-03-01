@@ -11,11 +11,11 @@ public class Soru3 {
     public static void main(String[] args) {
         PriorityQueue<Musteri> oncelikliKuyruk = new PriorityQueue<>((m1, m2) -> {
             if (m1.isBankaMusterisiMi() && !m2.isBankaMusterisiMi()) {
-                return -1; // m1 öncelikli
+                return -1; // bu durumda m1 öncelikli olmalı
             } else if (!m1.isBankaMusterisiMi() && m2.isBankaMusterisiMi()) {
-                return 1; // m2 öncelikli
+                return 1; // bu durumda m2 öncelikli olmalı
             } else {
-                return Integer.compare(m1.getSiraNo(), m2.getSiraNo()); // Sıra numarasına göre öncelik
+                return Integer.compare(m1.getSiraNo(), m2.getSiraNo()); // Harici durumda sıra numarasına göre öncelik
             }
         });
 
